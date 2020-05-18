@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="vicon.gif" type="image/gif" sizes="16x16">
+</head>
+
+<body>
+    <div class="banner"></div>
+    <div class="navbar">
+        <a href="index.html"><span>Home</span></a>
+        <a href="#aboutme"><span>About Me</span></a>
+        <a href="#contact"><span>Contact Me</span></a>
+        <a href="#mygallery"><span>My Gallery</span></a>
+        <a href="#admingallery"><span>Admin Gallery</span></a>
+
+    </div>
+
+    <container>
+
+        <div id="home">
+            <div class="skip"></div>
+            <div class="center">
+                <p>
+                <H1 style="color:rgb(241, 92, 92);font-family: 'Times New Roman', Times, serif;">Hi,Welcome to My Blog
+                    !!</H1>
+                </p>
+                <img src="icon.gif" style="opacity: 1;" />
+            </div>
+
+        </div>
+        <hr />
+       
+        <div id="aboutme">
+            <div class="skip"></div>
+            <div class="center">
+                <p>
+                <H1 style="color:rgb(241, 92, 92);font-family: 'Times New Roman', Times, serif;"> About Me !</H1>
+                </p>
+                <div style="text-align:left;" class="center">
+                    <p>I am Vamshi,working as Software Engineer III at ZemosoLabs.</p>
+                    <p><b> About My work Experience </b></br>
+                    <ul>
+                        <li> Cofounded a Startup</li>
+                        <li>Had worked in MNC as Software Engineer, proficient in Backend Technologies</li>
+                        <li>Had worked in govt projects in very diversified Technologies </li>
+                        <li>Alumni of India's Top Tier Institues IIIT Hyderabad, NIT Warangal</li>
+
+                    </ul>
+                    </p>
+                    <p><b>Hobbies </b> </br>
+                    <ul>
+                        <li> Watching Sci-fi Movies</li>
+                        <li>Participating in Hackathons</li>
+                        <li>Obsessed with IOT Devices</li>
+                        <li>Technology explorer -ML Lover</li>
+                        <li>Competetive Programming</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div id="contact">
+            <div class="skip"></div>
+            <div class="center">
+                <p>
+                <H1 style="color:rgb(241, 92, 92);font-family: 'Times New Roman', Times, serif;"> Contact Me !</H1>
+                </p>
+                <form method="post" action="index.html">
+                    <div class="center form">
+                        <h2>Please Fill Your Details to Contact Me !</h2>
+                        <div class="card">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" name="firstName" placeholder="First Name" /> </br></div>
+                        <div class="card">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" name="lastName" placeholder="Last Name" /></br></div>
+                        <div class="card">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" placeholder="email address" /> </br></div>
+                        <div class="card">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" name="phoneNumber" placeholder="your phone number" /></br></div>
+                        <div class="card">
+                            <label for="note">Note:</label> </br>
+                            <textarea id="note" rows="3" cols="40" placeholder="Write a Note !"></textarea></div>
+                        </br>
+                        <button type="button" class="sbutton" id="" onclick="validate()">Submit </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <hr />
+        <div id="mygallery">
+            <div class="skip"></div>
+            <div class="center">
+                <p>
+                <H1 style="color:rgb(241, 92, 92);font-family: 'Times New Roman', Times, serif;">Welcome to Gallery !!
+                </H1>
+                </p>
+                <div id="gallery" class="slideshow">
+
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div id="admingallery">
+            <div class="skip">
+
+            </div>
+            <div class="center">
+                <p>
+                <H1 style="color:rgb(241, 92, 92);font-family: 'Times New Roman', Times, serif;">Welcome to Admin
+                    Gallery !!
+                </H1>
+                </p>
+                <form method="post" onsubmit="return validateAddForm()">
+                    <div class="center form">
+                        <h2>Enter the Details of image to upload into Gallery !</h2>
+                        <div id="addpreview">
+
+                        </div>
+                        <div class="card">
+                            <input type="hidden" id="imgid" value="" />
+                            <label for="firstName">Image URL:</label>
+                            <input id="formurl" type="text" name="url" placeholder="Enter URL of image"
+                                onchange="imgpreview(this)" /> </br></div>
+                        <div class="card">
+                            <label for="Name">Name:</label>
+                            <input id="formname" type="text" name="name" placeholder="Name" /></br></div>
+                        <div class="card">
+                            <label for="info">Information :</label>
+                            <input id="forminfo" type="text" name="info" placeholder="Information of image" /> </br>
+                        </div>
+                        <div class="card">
+                            <label for="date">Uploaded Date:</label>
+                            <input id="formdate" type="date" name="date" placeholder="" /></br></div>
+
+                        </br>
+                        <button type="button" class="sbutton" id="btn" onclick="validateAddForm()">Add Image </button>
+
+                    </div>
+                </form>
+                <div id="admingall" class="slideshow">
+
+                </div>
+            </div>
+        </div>
+
+    </container>
+    <script src="script.js"></script>
+</body>
+
+</html>
