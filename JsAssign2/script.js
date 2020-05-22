@@ -26,18 +26,18 @@ class Table {
         console.log(this.itemsCount);
         if (this.itemsCount > 0) {
             //console.log("enter in loop");
-            msg += '<table ><thead> <td>S.No</td> <td>Item Description </td> <td> Quantity</td> <td> Price(Rs) </td> </thead>';
+            msg += '<table id="' + this.number + '"><thead> <td>S.No</td> <td>Item Description </td> <td> Quantity</td> <td> Price(Rs) </td><td></td> </thead>';
             var count = 1;
             //console.log(msg);
             for (let item of this.items) {
                 //total += menu[item[0]].price*item[1];
                 //total += menu.price;
-                msg += '<tr><td>' + count++ + '</td><td>' + menu[item[0]].description + '</td><td>' + item[1] + '</td><td>' + menu[item[0]].price * item[1] + '</td> </tr>';
+                msg += '<tr><td>' + count++ + '</td><td>' + menu[item[0]].description + '</td><td><input min="1" id="' + item[0] + '" onchange="changeBill(this)" type="number" value="' + item[1] + '"/></td><td>' + menu[item[0]].price * item[1] + '</td><td><img id="' + item[0] + '" onclick="deleteItem(this)" src="del.png" /></td> </tr>';
 
             }
             msg += '<tr><td colspan="3">Total Amount</td><td>' + this.getTotal() + '</td></tr></table>';
 
-            msg += '<button type="button" onclick="closeSession(' + this.number + ')">Close Session</button>';
+            msg += '<button type="button" onclick="closeSession(' + this.number + ')">Close Session (Print Bill)</button>';
 
         } else {
             msg += 'There are no Items added in this table ';
@@ -159,6 +159,29 @@ function filterTable(ev) {
 
 }
 
+function changeBill(element) {
+    console.log("changeBill");
+    var menuId = element.id;
+    var val = element.value;
+    var tableId = element.parentNode.parentNode.parentNode.parentNode.id;
+    console.log(menuId, val, tableId);
+
+    if (val > 0) {
+        tables[tableId].items.set(menuId, parseInt(val));
+        displayTables();
+        tables[tableId].getBill();
+    }
+
+}
+function deleteItem(element) {
+    console.log("deleteitem");
+    var menuId = element.id;
+    var tableId = element.parentNode.parentNode.parentNode.parentNode.id;
+    console.log(menuId, tableId);
+    tables[tableId].items.delete(menuId);
+    displayTables();
+    tables[tableId].getBill();
+}
 
 function init() {
     displayTables();

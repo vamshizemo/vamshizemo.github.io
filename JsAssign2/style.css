@@ -89,4 +89,14 @@
     border:0.3px dashed red;
     border-collapse: collapse;
 }
+#billdetails td input{
+    width:40px;
+    border-top: 0px;
+    border-left:0px;
+    background-color:rgb(243, 233, 233);
+}
+
+#billdetails img{
+    width:30px;
+    height: 30px;
 }
