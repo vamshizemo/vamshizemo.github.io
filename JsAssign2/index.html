@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    </link>
+</head>
+
+<body>
+    
+    <div class="tableBlock">
+        <div> <input type="text" id="tableSearch" placeholder="filter table" onkeyup="filterTable(this)" /> </div>
+        <div class="tableList" id="tableList">
+
+        </div>
+
+    </div>
+    
+    <div class="menuBlock">
+        <div class="bill" id="bill">
+            <div id="close" onclick="closebill(event)">
+                X
+            </div>
+            <div id="billdetails">
+                
+
+            </div>
+
+        </div>
+        <div> <input id="menuSearch" type="text" placeholder="Search Menu" onkeyup="filterMenu(this)"/> </div>
+        <div class="menuList" id="menuList">
+
+
+        </div>
+
+    </div>
+    
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
